@@ -5,33 +5,27 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".MainActivity2"
     android:orientation="vertical"
-    android:paddingHorizontal="16dp"
     android:gravity="center"
-
+    android:paddingHorizontal="16dp"
     >
 
-    <EditText
+    <CheckBox
+        android:id="@+id/checkBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="enter your name"
-        android:id="@+id/nameET"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:hint="enter your age"
-        android:id="@+id/ageET"
-        />
+        android:text="CheckBox" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/nextButton1"
+    <Switch
+        android:id="@+id/switch1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="NEXT"
-        android:background="#ff9800"
+        android:text="Switch" />
 
-        />
+    <Button
+        android:id="@+id/nextButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NEXT" />
 </LinearLayout>
