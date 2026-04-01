@@ -23,21 +23,24 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
-
-//        binding.nextButton1.setOnClickListener {  }
-        binding.apply {
-            nextButton1.setOnClickListener {
-                val name = nameET.text.toString()
-                val age = ageET.text.toString()
-
-                val intent = Intent(this@MainActivity, MainActivity2::class.java)
-
-                intent.putExtra("NAME", name)
-                intent.putExtra("AGE", age)
-                startActivity(intent)
-            }
+        binding.mercedesBtn.setOnClickListener {
+            openPayment("Mercedes CLA", 46400.0)
         }
+
+        binding.porscheBtn.setOnClickListener {
+            openPayment("Porsche 911", 189000.0)
+        }
+
+        binding.ferrariBtn.setOnClickListener {
+            openPayment("Ferrari 488", 260000.0)
+        }
+    }
+
+    private fun openPayment(name: String, price: Double) {
+        val intent = Intent(this@MainActivity, MainActivity2::class.java)
+        intent.putExtra("itemName", name)
+        intent.putExtra("itemPrice", price)
+        startActivity(intent)
     }
 }

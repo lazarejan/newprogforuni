@@ -10,22 +10,46 @@
     android:gravity="center"
     android:paddingHorizontal="16dp"
     >
+    <TextView
+        android:id="@+id/itemName"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="CheckBox" />
+    <TextView
+        android:id="@+id/basePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Switch" />
+    <RadioGroup
+        android:id="@+id/shippingGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:id="@+id/standard"
+            android:text="Standard (FREE)"/>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/express"
+            android:text="Express (+1700)"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/totalPrice"
+        android:textSize="20sp"
+        android:text="Total:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/nextButton2"
+        android:id="@+id/payBtn"
+        android:text="Pay"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="NEXT" />
+        android:layout_height="wrap_content"/>
 </LinearLayout>

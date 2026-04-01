@@ -9,29 +9,30 @@
     android:orientation="vertical"
     android:paddingHorizontal="16dp"
     android:gravity="center"
-
     >
 
-    <EditText
+    <Button
+        android:id="@+id/bmwBtn"
+        android:text="BMW M3 - $38000"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="enter your name"
-        android:id="@+id/nameET"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:hint="enter your age"
-        android:id="@+id/ageET"
-        />
+        android:layout_height="wrap_content"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/nextButton1"
+    <Button
+        android:id="@+id/mercedesBtn"
+        android:text="Mercedes CLA - $46400"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="NEXT"
-        android:background="#ff9800"
+        android:layout_height="wrap_content"/>
 
-        />
+    <Button
+        android:id="@+id/porscheBtn"
+        android:text="Porsche 911 - $189000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/ferrariBtn"
+        android:text="Ferrari 488 - $260000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
+

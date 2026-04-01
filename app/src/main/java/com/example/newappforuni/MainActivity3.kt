@@ -10,7 +10,7 @@ import com.example.newappforuni.databinding.ActivityMain3Binding
 
 class MainActivity3 : AppCompatActivity() {
 
-    lateinit var binding: ActivityMain3Binding
+    private lateinit var binding: MainActivity3
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,17 +21,5 @@ class MainActivity3 : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        binding = ActivityMain3Binding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        binding.nameTV.text = intent.getStringExtra("NAME")
-        binding.ageTV.text = intent.getIntExtra("AGE", 0).toString()
-        binding.checkBoxTV.text = intent.extras?.getBoolean("CHECKBOX").toString()
-        binding.switch1TV.text = intent.extras?.getBoolean("SWITCH").toString()
-
-
-
-
     }
 }
