@@ -6,11 +6,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import com.example.newappforuni.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding : ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,26 +22,38 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.mercedesBtn.setOnClickListener {
-            openPayment("Mercedes CLA", 46400.0)
-        }
+        init()
+    }
 
-        binding.porscheBtn.setOnClickListener {
-            openPayment("Porsche 911", 189000.0)
-        }
-
-        binding.ferrariBtn.setOnClickListener {
-            openPayment("Ferrari 488", 260000.0)
+    private fun init() = with(binding){
+        loadFragment(HomeFragment())
+        bottomNavMenu.setOnItemSelectedListener { item ->
+            when(item.itemId){
+                R.id.homeItem -> {
+                    loadFragment(HomeFragment())
+                    true
+                }
+                R.id.searchItem -> {
+                    loadFragment(SearchFragment())
+                    true
+                }
+                R.id.profileItem -> {
+                    loadFragment(ProfileFragment())
+                    true
+                }
+                else -> {
+                    loadFragment(HomeFragment())
+                    true
+                }
+            }
         }
     }
 
-    private fun openPayment(name: String, price: Double) {
-        val intent = Intent(this@MainActivity, MainActivity2::class.java)
-        intent.putExtra("itemName", name)
-        intent.putExtra("itemPrice", price)
-        startActivity(intent)
+    private fun loadFragment(f : Fragment) {
+        supportFragmentManager.beginTransaction().replace(R.id.placeHolder, f).commit()
     }
+
+
 }

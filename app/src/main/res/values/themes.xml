@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.Newappforuni" parent="Base.Theme.Newappforuni" />
+
+    <style name="shapeofappearance." parent=" ">
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>
